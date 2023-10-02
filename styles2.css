@@ -1,0 +1,23 @@
+/* Add a CSS class for the fading effect */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 3s ease, transform 3s ease;
+}
+
+/* Apply the fading effect when the image is visible */
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.snapBox {
+  scroll-snap-align: start;
+  margin-bottom: 2rem;
+}
+#ex__sb {
+  padding-top: 1px;
+}

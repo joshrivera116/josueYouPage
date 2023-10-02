@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/styles2.css" />
+    <title>Josue</title>
+  </head>
+  <body>
+    <div class="snapBox">
+      <div class="navbar">
+        <nav class="navbar__container">
+          <a href="#hero__container" class="navbar__logo">JOSUE</a>
+          <ul class="navbar__menu">
+            <li class="navbar__items">
+              <a
+                href="https://github.com/joshrivera116?tab=repositories"
+                class="navbar__links active-link"
+                target="_blank"
+                >Github</a
+              >
+            </li>
+            <li class="navbar__items">
+              <a href="#sections" class="navbar__links" onclick="scrollToAbout()">About me</a>
+            </li>
+            <li class="navbar__items">
+              <a href="#form" class="navbar__links">Contact me</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="hero__container">
+        <div class="hero__image">
+          <div class="hero__text">
+            <p>Wecome to my page!</p>
+            <li class="hero__btn">
+              <a
+                href="https://www.linkedin.com/in/josu%C3%A9-rivera-29baa3272/"
+                class="button"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sections">
+      <div class="snapBox">
+        <div class="header1"><h1 class="sub-t">About me</h1></div>
+        <div id="__about" class="contain2">
+          <div class="about-col-1">
+            <div class="image-container">
+              <img
+                id="image1"
+                src="unnamed.jpg"
+                data-src="unnamed.jpg"
+                class="fade-in"
+                draggable="true"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="about-col-2">
+            <p class="para">
+I am Josue Rivera, a Technical Analyst at COMunity, a company co-founded by me and three other passionate individuals. As an aspiring software developer, I find immense joy and fulfillment in coding, which has become a cornerstone of my professional journey.
+
+My personal life is equally important to me, and I cherish spending quality time with my family. When I'm not immersed in the world of technology, you can often find me strolling through streets of downtown Chicago.
+
+My journey into the tech world may have started a bit later than some, as I discovered my passion for it at the age of 20. Prior to that, I had a deep interest in video creation and editing. I would spend countless hours crafting and editing videos for pure enjoyment.
+
+Today, I bring my passion, dedication, and technical expertise to i.c.stars where I strive to learn as much as I can.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="snapBox" id="ex__sb">
+        <div class="header"><h1 id="ex__h" class="subt__2">Experience</h1></div>
+        <div class="contain2">
+          <div class="about2-col-2">
+            <p class="para2">
+              Prior to my engagement with i.c.stars, I dedicated a year to honing
+              my programming skills, with a primary focus on Python. My journey
+              into coding started with the CS50 Course offered by Harvard, where I
+              learned C++. I discovered my deep affinity for coding and the
+              challenges that come with it. As a child I had an affinity for
+              solving puzzles and seeing patterns everywhere, also I had a deep
+              love for mathematics. After a year of intensive study, I reached a
+              point where I felt sufficient in Python to embark on a job search in
+              the field. It was during this journey that I came to the realization
+              that acquiring a job without a degree was going to be incredibly
+              challenging. Consequently, I initiated a quest for internships to
+              bolster my professional credibility, leading me to the discovery of
+              i.c.stars. Through my journey at i.c.stars I acquired knowledge on many different coding languages.
+            </p>
+          </div>
+          <div class="about2-col-1">
+            <!-- <img src="Josue Headshots.jpg" id="image2" /> -->
+            <img
+              src="Josue Headshots.jpg"
+              data-src="Josue Headshots.jpg"
+              id="image2"
+              class="fade-in"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="form" class="form">
+      <div class="snapBox">  
+        <div class="form__container">
+          <form
+            onsubmit="return false"
+            action="submit_form.php"
+            method="POST"
+            class="form__content"
+          >
+            <!-- Name Input -->
+            <label for="name" class="labels">Name:</label>
+            <input type="text" class="boxes" id="name" name="name" required />
+
+            <!-- Email Input -->
+            <label for="email" class="labels">Email:</label>
+            <input type="email" class="boxes" id="email" name="email" required />
+
+            <!-- Message Input -->
+            <label for="message" class="labels">Message:</label>
+            <textarea
+              id="message"
+              class="boxes"
+              name="message"
+              rows="4"
+              required
+            ></textarea>
+
+            <!-- Submit Button -->
+            <button
+              onclick="clearForm()"
+              type="submit"
+              value="Submit"
+              class="submit__btn"
+            >
+              submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      function clearForm() {
+        document.getElementById("message").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        alert("Thanks For The Submission!");
+      }
+    </script>
+    <script>
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+      // Intersection Observer to load images when they come into the viewport
+      const lazyImageObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      const lazyImage = entry.target;
+      if (entry.isIntersecting) {
+        // Image is in the viewport, fade it in
+        lazyImage.src = lazyImage.dataset.src;
+        lazyImage.removeAttribute("loading");
+        lazyImage.classList.add("is-visible");
+      } else {
+        // Image is not in the viewport, fade it out
+        lazyImage.classList.remove("is-visible");
+      }
+    });
+  }
+);
+
+    // Start observing lazy images
+    lazyImages.forEach((lazyImage) => {
+      lazyImageObserver.observe(lazyImage);
+    });
+    </script>
+    </script>
+  </body>
+</html>
